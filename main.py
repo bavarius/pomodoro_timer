@@ -47,10 +47,7 @@ def count_down(count: int):
 
     minutes = count // MIN_TO_SEC
     seconds = count % MIN_TO_SEC
-    if seconds < 10:
-        seconds = f"0{seconds}"
-
-    canvas.itemconfig(timer_text, text=f"{minutes}:{seconds}")
+    canvas.itemconfig(timer_text, text=f"{minutes}:{seconds:02d}")
 
     if count > 0:
         timer = window.after(1000, count_down, count - 1)
